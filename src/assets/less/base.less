@@ -1,0 +1,114 @@
+@import './_theme.less';
+@import './_mixin.less';
+@import './flex.less';
+@import './common.less';
+@import './reset.less';
+@import './antd.reset.less';
+@import './antd.reset/index.less';
+
+/* 设置 body元素 通用属性 */
+body {
+
+  // 兼容微软edge placeholder不显示问题
+  ::-webkit-input-placeholder {
+    opacity: 1;
+  }
+
+  // 确保内容不超出时，windows 无滚动条
+  overflow: auto;
+  background: @body-bg-color;
+}
+
+/* 设置 a元素 通用属性 */
+a {
+  cursor: pointer;
+}
+
+.margin-default-loop();
+
+.padding-default-loop();
+
+.margin-little-loop();
+
+.padding-little-loop();
+
+.margin-middle-loop();
+
+.padding-middle-loop();
+
+.margin-middle-loop();
+
+.margin-big-loop();
+
+.padding-big-loop();
+
+.inline-block {
+  display: inline-block;
+}
+
+.cover-height {
+  min-height: 100%;
+}
+
+.over-height {
+  .cover-height;
+  overflow: auto;
+}
+
+.auto-flex {
+  flex-flow: nowrap !important;
+  min-height: 100% !important;
+}
+
+.component-box {
+  background: rgb(var(--project-name-box-bg));
+}
+
+.over-height {
+  height: 100%;
+}
+
+.auto-flex {
+  flex-flow: nowrap !important;
+}
+
+// a {
+//   color: var(--project-name-primary);
+
+//   &:hover {
+//     color: rgba(var(--project-name-controlled-main), 0.5);
+//   }
+// }
+
+// 点击
+.span-click {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  color: rgba(var(--project-name-text-color), 0.85);
+
+  &:hover {
+    color: var(--project-name-primary);
+  }
+}
+
+.primary-color {
+  color: var(--project-name-primary);
+}
+
+.clearfix() {
+  zoom: 1;
+
+  &::before,
+  &::after {
+    display: table;
+    content: ' ';
+  }
+
+  &::after {
+    clear: both;
+    height: 0;
+    font-size: 0;
+    visibility: hidden;
+  }
+}

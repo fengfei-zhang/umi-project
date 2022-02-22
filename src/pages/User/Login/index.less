@@ -1,0 +1,79 @@
+.main {
+  position: relative;
+  min-height: 100%;
+  line-height: 1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.title {
+  margin-bottom: 32px;
+  color: #2e3f4f;
+  font-size: 34px;
+}
+
+.login-form-wrap {
+  text-align: center;
+}
+
+.form-layout {
+  width: 450px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  :global {
+    // // ============== 重写 antd ==================
+    .ant-input:focus > .custom-icon-wrap {
+      color: @primary-color;
+    }
+
+    .ant-input-affix-wrapper-focused {
+      .ant-input-prefix {
+        color: @primary-color;
+      }
+    }
+
+    .ant-input-affix-wrapper:hover {
+      border-color: @primary-color;
+    }
+
+    .ant-input-affix-wrapper .ant-input-prefix {
+      left: 0px;
+    }
+    .ant-input-affix-wrapper {
+      height: 40px;
+      border-radius: 8px;
+    }
+  }
+}
+.form-title {
+  margin-bottom: 24px;
+  padding-left: 36px !important;
+  color: #2bbfc7;
+  font-size: 36px !important;
+}
+.form {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 40px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.code {
+  width: 110px;
+  height: 40px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.button {
+  width: 100%;
+  height: 50px;
+}

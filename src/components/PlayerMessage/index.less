@@ -1,0 +1,35 @@
+@import '~@/assets/less/_theme.less';
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  background-color: #000;
+  border: 3px solid transparent;
+
+  img {
+    width: 29px;
+    height: 20px;
+  }
+
+  span {
+    color: @common-text-color;
+  }
+
+  .box {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    transform: translate(0, -50%);
+  }
+
+  .spin {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}

@@ -1,0 +1,27 @@
+.menu {
+  min-width: 136px;
+  :global {
+    .ant-dropdown-menu {
+      padding: 0px;
+    }
+    .ant-dropdown-menu-item,
+    .ant-dropdown-menu-submenu-title {
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+    .ant-dropdown-menu {
+      background: rgba(0, 0, 0, 0.9);
+      .ant-dropdown-menu-item {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+      }
+      .ant-dropdown-menu-item:hover,
+      .ant-dropdown-menu-submenu-title:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+    .ant-dropdown-menu-item-selected {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}

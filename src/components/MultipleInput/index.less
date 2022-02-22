@@ -1,0 +1,36 @@
+.main {
+  display: inline-block;
+}
+
+.select {
+  :global {
+    .yg-platform-select:not(.yg-platform-select-customize-input) .yg-platform-select-selector {
+      border-right: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+}
+
+.item {
+  margin-right: 6px;
+  padding: 1px 8px;
+  color: #fff;
+  background: var(--project-name-primary);
+  border-radius: 6px;
+  box-shadow: 0px 4px 6px rgba(--project-name-controlled-main, 0.35);
+}
+
+.tags {
+  :global {
+    .yg-platform-select:not(.yg-platform-select-customize-input) .yg-platform-select-selector {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+  }
+}
+
+.close {
+  margin-left: 8px;
+  cursor: pointer;
+}

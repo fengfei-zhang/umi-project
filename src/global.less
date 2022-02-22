@@ -1,0 +1,96 @@
+@import '~antd/es/style/themes/default.less';
+@import './assets/less/base.less';
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: Source Han Sans CN;
+
+  .font-gray {
+    color: rgba(0, 0, 0, 0.65);
+  }
+}
+
+.ant-btn,
+.ant-input,
+.ant-select-selector,
+.ant-select-dropdown,
+.ant-dropdown,
+.ant-dropdown-menu,
+// .ant-input-number-input-wrap,
+.ant-input-number,
+.ant-input-affix-wrapper {
+  overflow: hidden;
+  border-radius: 8px !important;
+}
+
+.ant-input-number-group-wrapper {
+  .ant-input-number {
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 8px !important;
+  }
+
+  .ant-input-number-group-addon {
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+  }
+}
+
+.ant-input-number {
+  width: 100%;
+}
+
+.ant-drawer-header {
+  .ant-drawer-header-title {
+    position: relative;
+
+    .anticon-close {
+      position: absolute;
+      top: 5px;
+      right: 0;
+    }
+  }
+}
+
+.primary-color {
+  color: #2bbfc7;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.footer {
+  float: right;
+}
+
+.bgc-white {
+  background-color: white;
+}
+
+.dash-box {
+  background: rgba(247, 247, 247, 0.8);
+  border: 1px dashed #d9d9d9;
+}
+
+.ant-table-pagination.ant-pagination {
+  padding: 0 16px;
+}
+
+// .operation {
+//   a:hover {
+//     color: @primary-color;
+//   }
+// }
+
+.ant-btn-text:hover {
+  color: @primary-color;
+  background: none !important;
+}
+
+.pointer {
+  cursor: pointer;
+}

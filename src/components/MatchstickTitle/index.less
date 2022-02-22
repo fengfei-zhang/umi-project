@@ -1,0 +1,19 @@
+@import '~antd/lib/style/themes/default.less';
+@import '~antd/lib/style/mixins/clearfix';
+@import '~@/assets/less/_mixin.less';
+
+.main {
+  position: relative;
+  font-weight: 500;
+
+  &::before {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 4px;
+    height: 60%;
+    background-color: @primary-color;
+    border-radius: 0px 6px 6px 0px;
+    content: ' ';
+  }
+}

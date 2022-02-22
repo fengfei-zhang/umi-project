@@ -1,0 +1,24 @@
+@import './_theme.less';
+
+.primary-color {
+  color: @primary-color;
+}
+
+/**  在线或者开启字体颜色  **/
+.online-color,
+.open-color {
+  .circle-before(@success-color);
+}
+
+/**  离线或者未开启字体颜色  **/
+.offline-color,
+.close-color {
+  .circle-before(@error-color);
+}
+
+.text-overflow {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

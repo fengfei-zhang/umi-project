@@ -1,0 +1,274 @@
+//流式布局
+.flow-layout (@gap: 10px, @width: 50%) {
+  margin-left: -@gap / 2;
+  margin-right: -@gap / 2;
+
+  >div,
+  >img {
+    float: left;
+    width: @width;
+    height: 100%;
+    padding: 0px @gap / 2;
+  }
+}
+
+/* 固定宽度，文字内容过长自动截断，并添加 ... 后缀 */
+.text-overflow () {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.for(@list, @code) {
+  & {
+    .loop(@i: 1) when (@i =< length(@list)) {
+      @value: extract(@list, @i);
+
+      @code();
+
+      .loop(@i + 1);
+    }
+
+    .loop();
+  }
+}
+
+/* stylelint-disable */
+.margin-default-loop() {
+  @array: top,
+  bottom,
+  left,
+  right;
+
+  .for(@array, {
+      .margin-@{value}-default {
+        margin-@{value}: @default-gap;
+      }
+    }
+
+  );
+
+  .margin-all-default {
+    margin: @default-gap;
+  }
+}
+
+
+/* stylelint-disable */
+.padding-default-loop() {
+  @array: top,
+  bottom,
+  left,
+  right;
+
+  .for(@array, {
+      .padding-@{value}-default {
+        padding-@{value}: @default-gap  !important;
+      }
+    }
+
+  );
+
+  .padding-all-default {
+    padding: @default-gap  !important;
+  }
+}
+
+/* stylelint-disable */
+.margin-little-loop() {
+  @array: top,
+  bottom,
+  left,
+  right;
+
+  .for(@array, {
+      .margin-@{value}-little {
+        margin-@{value}:@little-gap  !important;
+      }
+    }
+
+  );
+
+  .margin-all-little {
+    margin: @little-gap  !important;
+  }
+}
+
+/* stylelint-disable */
+.padding-little-loop() {
+  @array: top,
+  bottom,
+  left,
+  right;
+
+  .for(@array, {
+      .padding-@{value}-little {
+        padding-@{value}:@little-gap  !important;
+      }
+    }
+
+  );
+
+  .padding-all-little {
+    padding: @little-gap  !important;
+  }
+}
+
+/* stylelint-disable */
+.margin-middle-loop() {
+  @array: top,
+  bottom,
+  left,
+  right;
+
+  .for(@array, {
+      .margin-@{value}-middle {
+        margin-@{value}:@middle-gap  !important;
+      }
+    }
+
+  );
+}
+
+/* stylelint-disable */
+.padding-middle-loop() {
+  @array: top,
+  bottom,
+  left,
+  right;
+
+  .for(@array, {
+      .padding-@{value}-middle {
+        padding-@{value}:@middle-gap  !important;
+      }
+    }
+
+  );
+
+  .padding-all-middle {
+    padding: @middle-gap  !important;
+  }
+}
+
+/* stylelint-disable */
+.margin-big-loop() {
+  @array: top,
+  bottom,
+  left,
+  right;
+
+  .for(@array, {
+      .margin-@{value}-big {
+        margin-@{value}: @big-gap  !important;
+      }
+    }
+
+  );
+}
+
+/* stylelint-disable */
+.padding-big-loop() {
+  @array: top,
+  bottom,
+  left,
+  right;
+
+  .for(@array, {
+      .padding-@{value}-big {
+        padding-@{value}: @big-gap  !important;
+      }
+    }
+
+  );
+
+  .padding-all-big {
+    padding: @big-gap  !important;
+  }
+}
+
+/* stylelint-disable */
+.circle-before(@bg) {
+  &:before {
+    display: inline-block;
+    margin-right: 7px;
+    border-radius: 50%;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: @bg;
+    // animation: antStatusProcessing 1.2s infinite ease-in-out;
+  }
+}
+
+/* stylelint-disable */
+.custom-border-common(@color) {
+
+  &,
+  &:last-child {
+    >td {
+      border-top: 3px solid @color  !important;
+      border-bottom: 3px solid @color  !important;
+    }
+
+    >td:first-child {
+      border-left: 3px solid @color;
+    }
+
+    >td:last-child {
+      border-right: 3px solid @color;
+    }
+  }
+}
+
+.common-bg (@opacity: 1) {
+  background-color: rgba(0, 0, 0, @opacity);
+}
+
+/* stylelint-disable */
+.border-hover-common(@color) {
+
+  &,
+  &:last-child {
+    >td {
+      border-top: 3px solid @color  !important;
+      border-bottom: 3px solid @color  !important;
+    }
+
+    >td:first-child {
+      border-left: 3px solid @color;
+    }
+
+    >td:last-child {
+      border-right: 3px solid @color;
+    }
+  }
+}
+
+@-webkit-keyframes antStatusProcessing {
+  0% {
+    -webkit-transform: scale(.8);
+    transform: scale(.8);
+    opacity: .5
+  }
+
+  to {
+    -webkit-transform: scale(2.4);
+    transform: scale(2.4);
+    opacity: 0
+  }
+}
+
+@keyframes antStatusProcessing {
+  0% {
+    -webkit-transform: scale(.8);
+    transform: scale(.8);
+    opacity: .5
+  }
+
+  to {
+    -webkit-transform: scale(2.4);
+    transform: scale(2.4);
+    opacity: 0
+  }
+}
