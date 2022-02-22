@@ -17,7 +17,7 @@
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src ",
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "prettier": "prettier --write **/*.{js,jsx,tsx,ts,less,md,json}",
     "release": "standard-version",
     "deploy:dev": "deploy-cli-service deploy --mode dev"
   },
@@ -81,7 +81,7 @@
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.2.0",
     "eslint": "^7.25.0",
-    "husky": "^4.2.5",
+    "husky": "4.3.8",
     "less": "^4.1.1",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",

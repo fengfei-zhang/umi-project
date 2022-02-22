@@ -3,7 +3,7 @@ import { Form, Input, Button, message } from 'antd';
 import { Md5 } from 'ts-md5/dist/md5';
 import CustomIcon from '@/components/CustomIcon';
 import VerificationCode from '@/components/VerificationCode';
-import { captchaService, userLoginService, verifyCaptchaService } from '@/services/user';
+import { userLoginService } from '@/services/user';
 import { AxiosResponse } from 'axios';
 import { isReqSuccess } from '@/utils/utils';
 import MatchstickTitle from '@/components/MatchstickTitle';
@@ -11,7 +11,6 @@ import cookie from '@/utils/cookie';
 import styles from './index.less';
 import { useHistory } from 'umi';
 import Logo from '@/components/Logo';
-import StatusText from '@/components/StatusText';
 import { useRequest } from 'ahooks';
 
 const formItemLayout = {
@@ -24,7 +23,6 @@ const formItemLayout = {
   },
 };
 const Login: React.FC = () => {
-  const a;
   const [focusId, setFocusId] = useState<any>();
   const history = useHistory();
   const [captchaKey, setCaptchaKey] = useState('');
@@ -32,27 +30,27 @@ const Login: React.FC = () => {
   const [, setCaptchaUrl] = useState('');
 
   // 获取验证码
-  const captchaReq = useRequest(captchaService, {
-    manual: true,
-    formatResult: (response: AxiosResponse) => {
-      if (isReqSuccess(response)) {
-        const { data } = isReqSuccess(response);
-        setCaptchaKey(data.id_key);
-        setCaptchaUrl(data.data);
-        return data;
-      }
-      return response.data;
-    },
-  });
-  // 校验验证码
-  const verifyCaptchaReq = useRequest(verifyCaptchaService, {
-    manual: true,
-    formatResult: (response: AxiosResponse) => {
-      if (isReqSuccess(response)) return true;
-      return false;
-    },
-    onError: () => captchaReq.run(),
-  });
+  // const captchaReq = useRequest(captchaService, {
+  //   manual: true,
+  //   formatResult: (response: AxiosResponse) => {
+  //     if (isReqSuccess(response)) {
+  //       const { data } = isReqSuccess(response);
+  //       setCaptchaKey(data.id_key);
+  //       setCaptchaUrl(data.data);
+  //       return data;
+  //     }
+  //     return response.data;
+  //   },
+  // });
+  // // 校验验证码
+  // const verifyCaptchaReq = useRequest(verifyCaptchaService, {
+  //   manual: true,
+  //   formatResult: (response: AxiosResponse) => {
+  //     if (isReqSuccess(response)) return true;
+  //     return false;
+  //   },
+  //   onError: () => captchaReq.run(),
+  // });
 
   // 登录
   const loginRequest = useRequest(
@@ -96,7 +94,7 @@ const Login: React.FC = () => {
           >
             <Logo />
             <span className="margin-left-middle" style={{ display: 'inline-block' }}>
-              设备接入管理中心
+              xxxx系统
             </span>
           </div>
           <div className={styles['form-layout']}>
@@ -112,7 +110,7 @@ const Login: React.FC = () => {
                     placeholder="请输入用户名"
                     prefix={
                       <CustomIcon
-                        type="user"
+                        type="User"
                         className={focusId === 'account' ? 'primary-color' : ''}
                         style={{ height: 22, width: 22 }}
                       />
@@ -135,7 +133,7 @@ const Login: React.FC = () => {
                     placeholder="请输入密码"
                     prefix={
                       <CustomIcon
-                        type="password"
+                        type="Password"
                         className={focusId === 'password' ? 'primary-color' : ''}
                         style={{ height: 22, width: 22 }}
                       />

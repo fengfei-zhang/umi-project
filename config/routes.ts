@@ -1,7 +1,7 @@
 /*
  * @Author: zhangfengfei
  * @Date: 2021-06-28 17:05:42
- * @LastEditTime: 2021-12-07 17:02:24
+ * @LastEditTime: 2022-02-22 11:48:25
  * @LastEditors: zhangfengfei
  */
 // 默认从pages开始查找
@@ -25,18 +25,6 @@ const routes: IRoute[] = [
     path: '/',
     component: '../layouts/BasicLayout',
     routes: [
-      {
-        path: '/access-center',
-        component: './AccessCenter',
-        exact: true,
-        title: '接入中心',
-      },
-      {
-        path: '/running-center',
-        component: './RunningCenter',
-        exact: true,
-        title: '运行中心',
-      },
       {
         component: './404',
       },

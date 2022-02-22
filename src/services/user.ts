@@ -1,11 +1,11 @@
 /*
  * @Author: zhangfengfei
  * @Date: 2022-02-21 14:37:10
- * @LastEditTime: 2022-02-21 16:17:39
+ * @LastEditTime: 2022-02-22 15:18:35
  * @LastEditors: zhangfengfei
  */
 import { createCancelToken, requestV1 } from '@/utils/request';
-import { captchaApi, userLoginApi, verifyCaptchaApi } from '@/api';
+import { userLoginApi } from '@/api';
 
 /**
  * 用户登录
@@ -26,17 +26,16 @@ export async function userLoginService(
 /**
  * 获取验证码
  */
-export async function captchaService(requestId: string = 'captcha'): Promise<any> {
+/* export async function captchaService(requestId: string = 'captcha'): Promise<any> {
   return requestV1.get(captchaApi, {
     cancelToken: createCancelToken(requestId),
   });
-}
+} */
 
 /**
  * 校验验证码
- * @param params
  */
-export async function verifyCaptchaService(
+/* export async function verifyCaptchaService(
   params: {
     id_key: string;
     verify_value: string;
@@ -46,4 +45,4 @@ export async function verifyCaptchaService(
   return requestV1.post(verifyCaptchaApi, params, {
     cancelToken: createCancelToken(requestId),
   });
-}
+} */

@@ -14,6 +14,8 @@
 
 # misc
 .DS_Store
+.vscode/*
+
 
 # umi
 /src/.umi
@@ -26,3 +28,4 @@
 .eslintcache
 html.tar.gz
 project-name-frontend*
+

@@ -1,17 +1,3 @@
-//流式布局
-.flow-layout (@gap: 10px, @width: 50%) {
-  margin-left: -@gap / 2;
-  margin-right: -@gap / 2;
-
-  >div,
-  >img {
-    float: left;
-    width: @width;
-    height: 100%;
-    padding: 0px @gap / 2;
-  }
-}
-
 /* 固定宽度，文字内容过长自动截断，并添加 ... 后缀 */
 .text-overflow () {
   text-overflow: ellipsis;
@@ -20,9 +6,11 @@
   display: inline-block;
 }
 
+/* 定义for函数 */
+/* stylelint-disable */
 .for(@list, @code) {
   & {
-    .loop(@i: 1) when (@i =< length(@list)) {
+    .loop(@i:1) when (@i =< length(@list)) {
       @value: extract(@list, @i);
 
       @code();
@@ -34,7 +22,6 @@
   }
 }
 
-/* stylelint-disable */
 .margin-default-loop() {
   @array: top,
   bottom,
@@ -55,7 +42,6 @@
 }
 
 
-/* stylelint-disable */
 .padding-default-loop() {
   @array: top,
   bottom,
@@ -75,7 +61,6 @@
   }
 }
 
-/* stylelint-disable */
 .margin-little-loop() {
   @array: top,
   bottom,
@@ -95,7 +80,6 @@
   }
 }
 
-/* stylelint-disable */
 .padding-little-loop() {
   @array: top,
   bottom,
@@ -115,7 +99,6 @@
   }
 }
 
-/* stylelint-disable */
 .margin-middle-loop() {
   @array: top,
   bottom,
@@ -131,7 +114,6 @@
   );
 }
 
-/* stylelint-disable */
 .padding-middle-loop() {
   @array: top,
   bottom,
@@ -151,7 +133,6 @@
   }
 }
 
-/* stylelint-disable */
 .margin-big-loop() {
   @array: top,
   bottom,
@@ -167,7 +148,6 @@
   );
 }
 
-/* stylelint-disable */
 .padding-big-loop() {
   @array: top,
   bottom,
@@ -187,7 +167,6 @@
   }
 }
 
-/* stylelint-disable */
 .circle-before(@bg) {
   &:before {
     display: inline-block;
@@ -201,7 +180,6 @@
   }
 }
 
-/* stylelint-disable */
 .custom-border-common(@color) {
 
   &,
@@ -225,7 +203,6 @@
   background-color: rgba(0, 0, 0, @opacity);
 }
 
-/* stylelint-disable */
 .border-hover-common(@color) {
 
   &,
@@ -244,6 +221,8 @@
     }
   }
 }
+
+/* stylelint-enable */
 
 @-webkit-keyframes antStatusProcessing {
   0% {

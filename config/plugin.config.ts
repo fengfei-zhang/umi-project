@@ -1,12 +1,11 @@
 /*
  * @Author: zhangfengfei
  * @Date: 2021-06-28 17:05:42
- * @LastEditTime: 2021-12-22 17:33:38
+ * @LastEditTime: 2022-02-22 11:48:37
  * @LastEditors: zhangfengfei
  */
 // Change theme plugin
 import path from 'path';
-const { name } = require('../package.json');
 
 function getModulePackageName(module: { context: string }) {
   if (!module.context) return null;

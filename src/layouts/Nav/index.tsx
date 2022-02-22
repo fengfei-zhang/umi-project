@@ -1,11 +1,10 @@
 /*
  * @Author: zhangfengfei
  * @Date: 2021-07-01 10:37:40
- * @LastEditTime: 2021-12-17 14:23:49
+ * @LastEditTime: 2022-02-22 15:25:35
  * @LastEditors: zhangfengfei
  */
 import CustomIcon from '@/components/CustomIcon';
-import Dropdown from '@/components/Dropdown';
 import Logo from '@/components/Logo';
 import cookie from '@/utils/cookie';
 import { logout } from '@/utils/utils';
@@ -32,7 +31,7 @@ const Nav: FC<NavProps> = ({ isLogin }) => {
     <Row justify="space-between" className={`flex flex-align-center ${styles.nav}`}>
       <Col className={`h-100 flex flex-align-center ${styles.left}`}>
         <Logo style={{ height: 24, width: 24 }} />
-        <span className={`margin-left-little ${styles.title}`}>设备接入管理中心</span>
+        <span className={`margin-left-little ${styles.title}`}>xxxx系统</span>
       </Col>
 
       {isLogin && (
@@ -52,31 +51,6 @@ const Nav: FC<NavProps> = ({ isLogin }) => {
             <SettingOutlined className="margin-right-little" />
             系统管理
           </Button> */}
-          <Dropdown
-            title={
-              <span className="pointer" style={{ display: 'inline-block', fontSize: 16 }}>
-                <span className={`margin-right-little ${styles.user_icon}`}>
-                  <CustomIcon
-                    type="userAccount"
-                    style={{ height: 14, width: 14, marginLeft: 5, marginBottom: 5 }}
-                  />
-                </span>
-                {cookie.getCookie('account')}
-              </span>
-            }
-            data={[
-              {
-                label: '退出登录',
-                value: 'logout',
-                icon: <CustomIcon type="logout" style={iconStyle} />,
-              },
-            ]}
-            onClick={() => {
-              logout();
-              window.location.href = '/user/login';
-            }}
-            showDownIcon={false}
-          />
         </Col>
       )}
     </Row>
