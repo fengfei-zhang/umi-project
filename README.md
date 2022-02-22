@@ -1,4 +1,10 @@
-# 新接入项目
+<!--
+ * @Author: zhangfengfei
+ * @Date: 2022-02-22 16:14:41
+ * @LastEditTime: 2022-02-22 16:41:02
+ * @LastEditors: zhangfengfei
+-->
+# xxx项目
 
 ## 相关技术
 
@@ -56,28 +62,21 @@
 └── typings.d.ts
 ```
 
-## 构建
-
 ### 开发
 
-在 `config/config.ts`中配置路由
+#### 配置
 
-启动脚本：`npm run start` 开启代理：`start:no-mock`
+在 `config/routes.ts`中配置路由
 
+在 `config/config.ts`中的proxy字段代理到后端
 
+#### 脚本说明
 
-## 发布
+`cm`：提交commit
 
-### 开发环境部署
+`start` ：启动，本地mock数据
 
-1. 如没有安装 deploy-cli-service,执行`npm install deploy-cli-service -g`
-2. 在 `deploy.config.js` 进行相关配置
-3. 执行 `npm run deploy:dev` 完成部署
+`start:no-mock `：启动，代理后端数据
 
-### 武汉环境
+`lint-staged`：格式化提交代码
 
-执行 `./ftp-build.sh` 后上传至指定 ftp
-
-## 提测
-
-执行`./svn-build.sh`得出提测文件夹，直接拖动文件夹至 svn 目录并上传即可
